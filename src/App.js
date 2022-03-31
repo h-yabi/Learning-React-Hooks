@@ -1,10 +1,21 @@
-import React, { useState } from 'react'
+import userEvent from '@testing-library/user-event'
+import React, { useEffect, useState } from 'react'
 
 const App = props => {
 
   const [state, setState] = useState(props)
   const { name, price } = state
   const reset = () => setState(props)
+
+
+  useEffect(() => {
+    console.log('useEffect')
+  }, [])
+
+  useEffect(() => {
+    console.log('name に限定したコールバックですよ。')
+  }, [name])
+
 
   return (
     <>
