@@ -1,7 +1,7 @@
 import { useReducer } from "react"
 
 import CreateEventForm from './CreateEventForm'
-import Event from './Event'
+import Events from './Events'
 import reducer from "../reducers"
 
 const App = () => {
@@ -13,7 +13,7 @@ const App = () => {
       <CreateEventForm dispatch={dispatch} />
 
       <h4 className="mt-5">イベント一覧</h4>
-      <Event event={state} dispatch={dispatch} />
+      <Events event={state} dispatch={dispatch} />
     </div>
   )
 }

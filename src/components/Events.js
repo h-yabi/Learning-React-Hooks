@@ -1,4 +1,4 @@
-const Event = ({ event, dispatch }) => {
+const Events = ({ event, dispatch }) => {
   const deleteEvent = (id) => {
     dispatch({
       type: 'DELETE_EVENT',
@@ -40,4 +40,4 @@ const Event = ({ event, dispatch }) => {
   )
 }
 
-export default Event
+export default Events
