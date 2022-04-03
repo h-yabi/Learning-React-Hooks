@@ -14,7 +14,7 @@ const events = (state = [], action) => {
       console.log(state)
       console.log(action.id)
       return state.filter(event => event.id !== action.id)
-    case 'DELETE_ALL_EVENT':
+    case 'DELETE_ALL_EVENTS':
       return []
     default:
       return state

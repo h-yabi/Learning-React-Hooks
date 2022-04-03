@@ -17,6 +17,10 @@ const App = () => {
     setBody('')
   }
 
+  const deleteAllEvents = () => {
+    dispatch({ type: 'DELETE_ALL_EVENTS' })
+  }
+
   return (
     <div className="container mt-5">
       <h4>イベント作成フォーム</h4>
@@ -30,7 +34,7 @@ const App = () => {
           <textarea className="form-control" id="formEventBody" value={body} onChange={e => setBody(e.target.value)} />
         </div>
         <button type="button" className="btn btn-primary mr-3" onClick={addEvent}>イベントを作成する</button>
-        <button type="button" className="btn btn-danger">全てのイベントを削除する</button>
+        <button type="button" className="btn btn-danger" onClick={deleteAllEvents}>全てのイベントを削除する</button>
       </form>
 
       <Event event={state} dispatch={dispatch} />
