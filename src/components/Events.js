@@ -1,9 +1,11 @@
 const Events = ({ event, dispatch }) => {
   const deleteEvent = (id) => {
-    dispatch({
-      type: 'DELETE_EVENT',
-      id
-    })
+    if (window.confirm(`id: ${id}を削除しても良いですか？`)) {
+      dispatch({
+        type: 'DELETE_EVENT',
+        id
+      })
+    }
   }
 
   return (
