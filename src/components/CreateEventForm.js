@@ -17,7 +17,9 @@ const CreateEventForm = ({ event, dispatch }) => {
   const unCreatable = title.length === 0 || body.length === 0
 
   const deleteAllEvents = () => {
-    dispatch({ type: 'DELETE_ALL_EVENTS' })
+    if (window.confirm('全てのイベントを削除しても良いですか？')) {
+      dispatch({ type: 'DELETE_ALL_EVENTS' })
+    }
   }
 
   return (
