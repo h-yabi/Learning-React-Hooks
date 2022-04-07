@@ -1,6 +1,9 @@
+import { useContext } from 'react';
 import { DELETE_EVENT } from '../actions';
+import AppContext from '../contexts/AppContext';
 
 const Events = ({ event, dispatch }) => {
+  const value = useContext(AppContext)
   const deleteEvent = (id) => {
     if (window.confirm(`id: ${id}を削除しても良いですか？`)) {
       dispatch({
@@ -12,6 +15,7 @@ const Events = ({ event, dispatch }) => {
 
   return (
     <>
+      <div>{value}</div>
       <h4 className="mt-5">イベント一覧</h4>
       <table className="table table-hover">
         <thead>
