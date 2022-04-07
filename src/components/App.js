@@ -9,10 +9,10 @@ const App = () => {
   const [state, dispatch] = useReducer(reducer, [])
 
   return (
-    <AppContext.Provider value={'Hello, I am a provider'}>
+    <AppContext.Provider value={{ state, dispatch }}>
       <div className="container mt-5">
-        <CreateEventForm event={state} dispatch={dispatch} />
-        <Events event={state} dispatch={dispatch} />
+        <CreateEventForm />
+        <Events />
       </div>
     </AppContext.Provider>
   )

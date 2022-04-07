@@ -1,7 +1,9 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { CREATE_EVENT, DELETE_ALL_EVENTS } from '../actions';
+import AppContext from "../contexts/AppContext"
 
-const CreateEventForm = ({ event, dispatch }) => {
+const CreateEventForm = () => {
+  const { state, dispatch} = useContext(AppContext)
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
 
@@ -36,7 +38,7 @@ const CreateEventForm = ({ event, dispatch }) => {
           <textarea className="form-control" id="formEventBody" value={body} onChange={e => setBody(e.target.value)} />
         </div>
         <button type="button" className="btn btn-primary mr-3" onClick={addEvent} disabled={unCreatable}>イベントを作成する</button>
-        <button type="button" className="btn btn-danger" onClick={deleteAllEvents} disabled={event.length === 0}>全てのイベントを削除する</button>
+        <button type="button" className="btn btn-danger" onClick={deleteAllEvents} disabled={state.length === 0}>全てのイベントを削除する</button>
       </form>
     </>
   )
