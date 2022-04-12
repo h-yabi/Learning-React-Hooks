@@ -59,9 +59,30 @@ const EventForm = () => {
           <label htmlFor="formEventBody">ボディー</label>
           <textarea className="form-control" id="formEventBody" value={body} onChange={e => setBody(e.target.value)} />
         </div>
-        <button type="button" className="btn btn-primary mr-3" onClick={addEvent} disabled={unCreatable}>イベントを作成する</button>
-        <button type="button" className="btn btn-danger mr-3" onClick={deleteAllEvents} disabled={state.length === 0}>全てのイベントを削除する</button>
-        <button type="button" className="btn btn-danger" onClick={deleteAllLogs}>全ての操作ログを削除する</button>
+        <button
+          type="button"
+          className="btn btn-primary mr-3"
+          onClick={addEvent}
+          disabled={unCreatable}
+        >
+          イベントを作成する
+        </button>
+        <button
+          type="button"
+          className="btn btn-danger mr-3"
+          onClick={deleteAllEvents}
+          disabled={state.events.length === 0}
+        >
+          全てのイベントを削除する
+        </button>
+        <button
+          type="button"
+          className="btn btn-danger"
+          onClick={deleteAllLogs}
+          disabled={state.operationLogs.length === 0}
+        >
+          全ての操作ログを削除する
+        </button>
       </form>
     </>
   )

@@ -1,7 +1,7 @@
 import { useReducer } from "react"
 import AppContext from "../contexts/AppContext"
 
-import CreateEventForm from './CreateEventForm'
+import EventForm from './EventForm'
 import Events from './Events'
 import reducer from "../reducers"
 
@@ -15,7 +15,7 @@ const App = () => {
   return (
     <AppContext.Provider value={{ state, dispatch }}>
       <div className="container mt-5">
-        <CreateEventForm />
+        <EventForm />
         <Events />
       </div>
     </AppContext.Provider>
